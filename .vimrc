@@ -4,6 +4,9 @@ set nu
 " optional if console only supports 256 bit color
 set t_Co=256
 
+" enable syntax highligting
+syntax on
+
 " Complete options (disable preview scratch window)
 "set completeopt = menu,menuone,longest
 " Limit popup menu height
