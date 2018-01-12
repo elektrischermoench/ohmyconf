@@ -100,6 +100,7 @@ alias tmuxconf="vim ~/.tmux.conf"
 alias zshconf="vim ~/.zshrc"
 alias i3conf="vim ~/.i3/config"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vimconf="vim ~/.vimrc"
 #alias cutter="~/bin/cutter/AppRun"
 
 autoload bashcompinit
