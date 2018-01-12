@@ -28,6 +28,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
 Plug 'Rip-Rip/clang_complete'
 Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline'
 
 " Initialize plugin system
 call plug#end()
@@ -68,3 +69,5 @@ let g:clang_library_path="/usr/lib/llvm-3.5/lib"
 let g:clang_sort_algo="priority"
 let g:clang_complete_macros=1
 let g:clang_complete_patterns=0
+
+let g:airline_powerline_fonts = 1 
