@@ -1,16 +1,52 @@
+syntax on
+
 colorscheme mustang 
 set nu
 
+if empty(glob('~/.vim/colors/mustang.vim'))
+  silent !curl -fLo ~/.vim/colors/mustang.vim --create-dirs
+    \ https://raw.githubusercontent.com/croaker/mustang-vim/master/colors/mustang.vim 
+  autocmd VimEnter * source $MYVIMRC
+endif
+
+
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+" On-demand loading
+Plug 'scrooloose/nerdtree'
+Plug 'ervandew/supertab'
+Plug 'Rip-Rip/clang_complete'
+Plug 'honza/vim-snippets'
+
+" Initialize plugin system
+call plug#end()
+
 " optional if console only supports 256 bit color
 set t_Co=256
-
-" enable syntax highligting
-syntax on
 
 " Complete options (disable preview scratch window)
 "set completeopt = menu,menuone,longest
 " Limit popup menu height
 "set pumheight = 15
+
+"if empty(glob('~/.vim/autoload/plug.vim'))
+"  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+"    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
+
+map <C-n> :NERDTreeToggle<CR>
 
 " SuperTab option for context aware completion
 let g:SuperTabDefaultCompletionType = "context"
